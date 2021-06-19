@@ -2,26 +2,100 @@
   Created by IntelliJ IDEA.
   User: lwy
   Date: 2021/6/16
-  Time: ä¸Šåˆ8:49
+  Time: ÉÏÎç8:49
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=GBK"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>ç™»å½•é¡µé¢</title>
+    <title>ÓÃ»§µÇÂ½</title>
 </head>
+<style>
+    body{
+        text-align:center;
+        background: url("image/17.jpg") fixed center center no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+    #center{
+        margin:0 auto;
+        border:1px soild #000;
+        width:300px;
+        height:300px
+    }
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .black_half{
+        padding: 25px;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .black_half h1{
+        color: #FFFFFF;
+    }
+    .black_half a{
+        text-decoration:none;
+        color: #FFFFFF;
+    }
+    .black_half a:hover{
+        text-decoration:underline;
+        color: #FFFFFF;
+    }
+    .white h3{
+        color: #FFFFFF;
+    }
+</style>
+<script>
+    function validateLogin() {
+        var userName = document.frmLogin.username.value;
+        var password = document.frmLogin.password.value;
+        if ((userName == "") || (userName == "ÊäÈëÄúµÄÓÃ»§Ãû")) {
+            alert("ÇëÊäÈëÓÃ»§Ãû!");
+            return false;
+        }
+        if ((password == "") || (password == "ÊäÈëÄúµÄÃÜÂë")) {
+            alert("ÇëÊäÈëÃÜÂë!");
+            return false;
+        }
+    }
+</script>
 <body>
-<h3>ç”¨æˆ·ç™»å½•</h3>
-<form action="login.action" method="post">
-    <table><tr align="center">
-        <td>ç”¨æˆ·åï¼š<input type="text" name="username"/></td>
-    </tr>
-        <tr align="center"><td>å¯†   ç ï¼š<input type="password" name="password"/></td></tr>
-        <tr align="center">
-            <td><input type="submit" value="æäº¤"/><input
-                    type="reset" value="é‡ç½®"/></td>
-        </tr>
-    </table>
-</form>
+<div align="center"><font face="ËÎÌå" size="6"><strong>
+    <div id = "center">
+        <form action="login.action" method="post" name="frmLogin">
+            <table class="hovertable" >
+                <tr>
+                    <td colspan="5" align="center" style="font-size:30px;height: 80px;width:300px;"><strong>µÇÂ½</strong></td>
+                </tr>
+                <tr>
+                    <th style="font-size:15px;">ÓÃ»§Ãû£º</th>
+                    <td style="font-size:15px;"><input type="text" name="username" value="ÊäÈëÄúµÄÓÃ»§Ãû"
+                                                       maxlength="16" style="width:200px;"
+                                                       onfocus="if(this.value == 'ÊäÈëÄúµÄÓÃ»§Ãû') this.value =''"></td>
+                </tr>
+                <tr>
+                    <th style="font-size:15px;">ÃÜ  Âë£º</th>
+                    <td style="font-size:15px;"><input type="text" name="password" value="ÊäÈëÄúµÄÃÜÂë"
+                                                       maxlength="20" style="width:200px;"
+                                                       onfocus="if(this.value == 'ÊäÈëÄúµÄÃÜÂë'){this.value =''; this.type='password'}"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="center" style="font-size:15px;">
+                        <input type="submit" value=" µÇ  Â¼  ">
+                        <input type ="button" value=" ĞÂÓÃ»§×¢²á  " onclick="location='register.jsp'">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="center"><a href="index.jsp">
+                        ·µ »Ø Ö÷ Ò³ </a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</strong>
+</font>
+</div>>
 </body>
 </html>
