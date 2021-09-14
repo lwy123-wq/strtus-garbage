@@ -16,7 +16,6 @@ import java.util.Set;
 
 public class LoginServlet   {
 
-
     public boolean checkLogin(ArrayList list)
     {
         String user = (String)list.get(0);
@@ -33,6 +32,7 @@ public class LoginServlet   {
             while(rs.next())
             {
                 hm.put(rs.getString("username"), rs.getString("password"));
+                System.out.println(rs.getString("username"));
             }
             MysqlConnection.release(p, conn,rs);
             Set<String> set = hm.keySet();
