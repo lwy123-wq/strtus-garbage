@@ -52,11 +52,4 @@ public class User extends ActionSupport {
         if(mark) return "success";
         else return "error";
     }
-
-   /* public String execute(){
-        if(getUsername().equals("liang")&& getPassword().equals("liang")){
-            return "success";
-        }
-        return "error";
-    }*/
 }
